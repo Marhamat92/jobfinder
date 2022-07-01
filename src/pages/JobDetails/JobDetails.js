@@ -17,6 +17,8 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 import Feather from "react-native-vector-icons/Feather";
 import Modal from "react-native-modal";
 import {useDispatch} from 'react-redux';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 function JobDetails({ route, navigation }) {
   const { id } = route.params;
@@ -42,7 +44,6 @@ function JobDetails({ route, navigation }) {
 
 const addFavorite = () => {
   setAddedToFavorite(true);
-  console.log("added ");
   setFavorite(true);
   dispatch({
     type: "ADD_FAVORITE",
@@ -68,6 +69,9 @@ const toggleModal = () => {
 const closeFavoriteModal = () => {
   setAddedToFavorite(false);
 };
+
+
+
      
 
   const onGetData = async () => {

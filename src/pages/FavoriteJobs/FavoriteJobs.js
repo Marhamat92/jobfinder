@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, Text, FlatList, View } from "react-native";
 import { useSelector } from "react-redux";
 import tw from "twrnc";
 import SmallButton from "../../components/Buttons/SmallButton";
 import { useDispatch } from "react-redux";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+
 
 function FavoriteJobs() {
+
+
+
   const favorite_jobs = useSelector((state) => state.favoriteJobs);
+
+
+
+ 
 
   const dispatch = useDispatch();
 
   const removeFavorite = (id) => {
+     
+    
+
     dispatch({
       type: "REMOVE_FAVORITE",
       payload: {
@@ -18,6 +31,7 @@ function FavoriteJobs() {
       },
     });
   };
+
 
   return (
     <SafeAreaView>
